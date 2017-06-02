@@ -5,7 +5,8 @@ import {
   Button,
   Image,
   StyleSheet,
-  ListView
+  ListView,
+  TouchableHighlight
 } from 'react-native';
 import { StackNavigator, NavigationActions } from 'react-navigation';
 
@@ -16,26 +17,21 @@ export default class ListDetailComponent extends React.Component {
     title: `List Detail`,
   });
 
+  pressed(){
+    console.log("hi");
+  }
+
 
   render() {
     return(
       <View>
-        <Text>{this.props.navigation.state.params.user.name}</Text>
+        <TouchableHighlight onPress={this.pressed}>
+          <Text>{this.props.navigation.state.params.user.name}</Text>
+        </TouchableHighlight>
         <Text>{this.props.navigation.state.params.user.role}</Text>
+        <Text>{this.props.navigation.state.params.user.songs.join(", ")}</Text>
+        <Text>{this.props.navigation.state.params.user.alive}</Text>
       </View>
     );
   }
 }
-
-styles = StyleSheet.create({
-  row: {
-    marginBottom: 5,
-    padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    backgroundColor: '#f4f4f4',
-  },
-  rowText: {
-    flex: 1,
-  }
-});

@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Text,
   View,
-  Button,
-  Image,
   TextInput,
   StyleSheet,
   Switch
@@ -60,7 +58,8 @@ export default class Input extends React.Component {
 styles = StyleSheet.create({
   t1: {
     margin: 10,
-    backgroundColor: 'red'
+    backgroundColor: 'red',
+    width: 200,
   },
   t2: {
     height: 40,
