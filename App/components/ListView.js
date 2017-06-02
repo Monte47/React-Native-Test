@@ -77,6 +77,7 @@ export default class ListViewComponent extends React.Component {
     this.state = {
       userDataSource: ds.cloneWithRows(users),
     };
+    this.renderRow = this.renderRow.bind(this);
   }
 
   static navigationOptions = ({ navigation }) => ({
